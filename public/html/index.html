@@ -8,7 +8,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.js"></script>
         <link rel="stylesheet" href="/css/main.css">
-        
 </head>
 <body>
     <div id="app">
@@ -21,7 +20,8 @@
     <ol>
         <li v-for="(todo, index) in list">
             <div v-bind:class="{ checkedToDo: todo.isCheckedComplete }">
-                <input v-on:click="markAsChecked(todo, index, $event)" v-bind:class="{ checkToDo: todo.isCheckedComplete }" v-model="todo.isCheckedComplete" type="checkbox"> // the v-bind:class makes the text so that it is crossed out when the server checks that the object is checked, the v-model makes sure the input checkbox itself stays checked or not depending on if isCheckedComplete is true on the server
+                <input v-on:click="markAsChecked(todo, index, $event)" v-bind:class="{ checkToDo: todo.isCheckedComplete }" v-model="todo.isCheckedComplete" type="checkbox"> 
+                <!-- the v-bind:class makes the text so that it is crossed out when the server checks that the object is checked, the v-model makes sure the input checkbox itself stays checked or not depending on if isCheckedComplete is true on the server -->
                 {{ todo.name }}
                 <button v-on:click="deleteToDo(todo, index, $event)"  type="button" class="btn btn-danger">Delete Task</button>
             </div>  

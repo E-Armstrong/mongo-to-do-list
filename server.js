@@ -27,6 +27,7 @@ app.use(bodyParser.json())
 app.get('/', function(req, res){
     res.sendFile('./html/index.html', {root: './public'})
 })
+
 app.post('/newtodo', function(req, res) {
     console.log('BODY:', req.body.newList);
     let newToDo = {
